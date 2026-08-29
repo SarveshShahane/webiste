@@ -3,8 +3,53 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, Users, Award, Calendar, ExternalLink } from 'lucide-react';
 import LeafletMap from '@/components/ui/leaflet';
+import soeBuilding from '@/assets/SOE_building.jpg';
+import jnuPhoto from '@/assets/JNU_photo.jpg';
 
 const AboutSection: React.FC = () => {
+  const getPublicUrl = (filename: string) => {
+    const base = import.meta.env.BASE_URL.endsWith('/')
+      ? import.meta.env.BASE_URL
+      : `${import.meta.env.BASE_URL}/`;
+    return `${base}${filename}`;
+  };
+
+  const patrons = [
+    {
+      name: 'Prof. Santishree Dhulipudi Pandit',
+      role: 'Vice Chancellor, JNU (Patron)',
+      image: 'vc_jnu-w9QH9FOO.jpg'
+    },
+    {
+      name: 'Prof. Brajesh Kumar Pandey',
+      role: 'Rector-I, JNU (Co-patron)',
+      image: 'rector1-D1aDtLND.jpeg'
+    },
+    {
+      name: 'Prof. Dipendra Nath Das',
+      role: 'Rector-II, JNU (Co-patron)',
+      image: 'rector2-BIsgBnBq.jpeg'
+    }
+  ];
+
+  const invitedSpeakers = [
+    {
+      name: 'Muhaged A. Al-Antari',
+      affiliation: 'Sejong University, South Korea'
+    },
+    {
+      name: 'Krishna Kumar',
+      affiliation: 'University of Auckland, New Zealand'
+    },
+    {
+      name: 'R.S. Aziz',
+      affiliation: 'South Metropolitan TAFE, Perth, Australia'
+    },
+    {
+      name: 'Ramesh Bansal',
+      affiliation: 'University of Sharjah, UAE'
+    }
+  ];
 
   const organizers = [
     {
@@ -81,7 +126,7 @@ const AboutSection: React.FC = () => {
           <h2 className="text-3xl font-bold text-primary mb-6">School of Engineering, JNU</h2>
           <div className="relative max-w-4xl mx-auto mb-8">
             <img 
-              src="/src/assets/SOE_building.jpg" 
+              src={soeBuilding} 
               alt="School of Engineering Building" 
               className="w-full h-64 md:h-80 object-cover rounded-2xl shadow-2xl hover-scale transition-all duration-500 border-4 border-accent/20"
             />
@@ -153,7 +198,7 @@ const AboutSection: React.FC = () => {
           <h2 className="text-3xl font-bold text-primary mb-6">Jawaharlal Nehru University</h2>
           <div className="relative max-w-4xl mx-auto mb-8">
             <img 
-              src="/src/assets/JNU_photo.jpg" 
+              src={jnuPhoto} 
               alt="Jawaharlal Nehru University Campus" 
               className="w-full h-64 md:h-80 object-cover rounded-2xl shadow-2xl hover-scale transition-all duration-500 border-4 border-accent/20"
             />
@@ -202,6 +247,76 @@ const AboutSection: React.FC = () => {
               </Card>
             );
           })}
+        </div>
+      </section>
+
+      {/* Patron and Co-patrons Section */}
+      <section className="animate-fade-in">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl sm:text-4xl font-bold text-accent mb-2">
+            Patron and Co-patrons
+          </h2>
+          <div className="w-16 h-1 bg-gradient-to-r from-accent to-primary mx-auto mb-4 rounded-full"></div>
+          <p className="text-muted-foreground text-sm sm:text-base max-w-3xl mx-auto">
+            The people providing leadership and guidance to uphold the university's vision, academic excellence, and innovation.
+          </p>
+        </div>
+
+        <div className="max-w-2xl mx-auto space-y-4">
+          {patrons.map((patron, idx) => (
+            <Card key={idx} className="shadow-card border border-border/80 bg-card rounded-2xl overflow-hidden hover-scale transition-smooth">
+              <CardContent className="p-3 sm:p-4 flex items-center gap-5">
+                <img
+                  src={getPublicUrl(patron.image)}
+                  alt={patron.name}
+                  className="w-24 h-24 sm:w-28 sm:h-28 rounded-xl object-cover flex-shrink-0 border border-border/80"
+                />
+                <div>
+                  <h3 className="font-bold text-primary text-base sm:text-lg">
+                    {patron.name}
+                  </h3>
+                  <p className="text-xs sm:text-sm font-medium text-accent mt-0.5">
+                    {patron.role}
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Invited Speakers Section */}
+      <section className="animate-fade-in">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl sm:text-4xl font-bold text-accent mb-2">
+            Invited Speakers
+          </h2>
+          <div className="w-16 h-1 bg-gradient-to-r from-accent to-primary mx-auto mb-4 rounded-full"></div>
+          <p className="text-muted-foreground text-sm sm:text-base max-w-3xl mx-auto">
+            Distinguished experts who will be sharing their insights at ISoE 2025.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          {invitedSpeakers.map((speaker, idx) => (
+            <Card key={idx} className="shadow-card border border-border/80 bg-card rounded-2xl overflow-hidden text-center hover-scale transition-smooth flex flex-col items-center">
+              <div className="w-full pt-6 pb-2 px-6 flex justify-center items-center">
+                <img
+                  src={getPublicUrl('user.png')}
+                  alt={speaker.name}
+                  className="w-28 h-28 sm:w-32 sm:h-32 object-contain opacity-75"
+                />
+              </div>
+              <CardContent className="p-4 pt-2 pb-6 flex-grow flex flex-col justify-end w-full">
+                <h3 className="font-bold text-primary text-sm sm:text-base">
+                  {speaker.name}
+                </h3>
+                <p className="text-xs text-muted-foreground mt-1">
+                  {speaker.affiliation}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </section>
 
