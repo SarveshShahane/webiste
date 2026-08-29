@@ -52,7 +52,7 @@ const AboutSection: React.FC = () => {
         <div className="text-center mb-12">
           <div className="relative">
             <h2 className="text-4xl font-bold text-primary mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-              About ISoE 2025
+              About ISoE 2026
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-accent to-primary mx-auto mb-8 rounded-full"></div>
           </div>
@@ -60,10 +60,10 @@ const AboutSection: React.FC = () => {
             <Card className="shadow-2xl border-0 bg-gradient-to-br from-background via-secondary/30 to-background">
               <CardContent className="p-8 md:p-12">
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  The International Symposium on Engineering (ISoE 2025), organized by the School of Engineering, 
+                  The International Symposium on Engineering (ISoE 2026), organized by the School of Engineering, 
                   Jawaharlal Nehru University (JNU), New Delhi, India, is a premier forum designed to bring together 
                   academicians, researchers, industry professionals, and students from diverse engineering domains. 
-                  With a focus on <span className="text-accent font-semibold">"Advances and Innovations in Engineering for a Sustainable Future,"</span> ISoE 2025 aims 
+                  With a focus on <span className="text-accent font-semibold">"Integration of AI, IoT and Green Technologies for a Sustainable Future,"</span> ISoE 2026 aims 
                   to foster interdisciplinary dialogue, showcase cutting-edge research, and explore technological 
                   solutions to global challenges. Through keynote lectures, technical sessions, poster presentations, 
                   and panel discussions, the symposium will provide participants with opportunities to exchange ideas, 
@@ -215,7 +215,7 @@ const AboutSection: React.FC = () => {
             <div className="w-24 h-1 bg-gradient-to-r from-accent to-primary mx-auto mb-8 rounded-full"></div>
           </div>
           <p className="text-muted-foreground text-lg max-w-4xl mx-auto mb-4">
-            The people responsible for ISoE 2025 across advisory, organizing, and volunteer roles.
+            The people responsible for ISoE 2026 across advisory, organizing, and volunteer roles.
           </p>
         </div>
 
