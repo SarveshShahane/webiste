@@ -285,6 +285,7 @@ const AboutSection: React.FC = () => {
         </div>
       </section>
 
+  
       {/* Invited Speakers Section */}
       <section className="animate-fade-in">
         <div className="text-center mb-8">
@@ -293,7 +294,7 @@ const AboutSection: React.FC = () => {
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-accent to-primary mx-auto mb-4 rounded-full"></div>
           <p className="text-muted-foreground text-sm sm:text-base max-w-3xl mx-auto">
-            Distinguished experts who will be sharing their insights at ISoE 2025.
+            Distinguished experts who will be sharing their insights at ISoE 2026.
           </p>
         </div>
 
@@ -319,25 +320,41 @@ const AboutSection: React.FC = () => {
           ))}
         </div>
       </section>
-
       {/* Organizing & Advisory Teams */}
-      <section className="animate-fade-in">
+      <section className="animate-fade-in space-y-12">
         <div className="text-center mb-8">
-          <div className="relative">
-            <h2 className="text-4xl font-bold text-primary mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-              Organizing & Advisory Teams
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-accent to-primary mx-auto mb-8 rounded-full"></div>
-          </div>
-          <p className="text-muted-foreground text-lg max-w-4xl mx-auto mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-accent mb-2">
+            Organizing &amp; Advisory Teams
+          </h2>
+          <div className="w-16 h-1 bg-gradient-to-r from-accent to-primary mx-auto mb-4 rounded-full"></div>
+          <p className="text-muted-foreground text-sm sm:text-base max-w-3xl mx-auto">
             The people responsible for ISoE 2026 across advisory, organizing, and volunteer roles.
           </p>
         </div>
 
+        {/* Chairperson Subsection */}
+        <div>
+          <h3 className="text-2xl font-bold text-primary mb-1">Chairperson</h3>
+          <p className="text-muted-foreground text-sm mb-6">Academic leadership and overall guidance for ISoE 2026.</p>
+          
+          <div className="max-w-xl mx-auto">
+            <Card className="shadow-card border border-border/80 bg-card rounded-2xl overflow-hidden hover-scale transition-smooth text-center">
+              <CardContent className="p-6">
+                <h4 className="font-bold text-primary text-base sm:text-lg">
+                  Prof. Pawan Kumar Kulriya
+                </h4>
+                <p className="text-xs sm:text-sm font-medium text-accent mt-1">
+                  Dean, School of Engineering
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
         {/* Technical Advisory Committee */}
         <div className="mt-8 mb-10">
-          <h3 className="text-2xl font-semibold text-primary mb-4">Technical Advisory Committee</h3>
-          <p className="text-muted-foreground mb-6 max-w-3xl">Experts who provide technical guidance and review standards for the symposium.</p>
+          <h3 className="text-2xl font-semibold text-primary mb-1">Technical Advisory Committee</h3>
+          <p className="text-muted-foreground text-sm mb-6 max-w-3xl">Experts who provide technical guidance and review standards for the symposium.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { name: 'Dr. Ankit Chaudhary', position: 'Associate Professor' },
